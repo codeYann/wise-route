@@ -32,7 +32,7 @@ NFR01 — The system shall return the optimization result for up to 20 points in
 
 NFR02 — The system shall provide a functional desktop interface that is responsive for mobile devices.
 
-NFR03 — The system shall store passwords using bcrypt hashing, protect API routes with JWT, and not expose environment variables on the frontend.
+NFR03 — The system shall store passwords using bcrypt hashing, protect API routes with JWT, and never expose secrets or credentials (e.g., API keys, database credentials, private tokens) to the client. Only a whitelist of explicitly designated public configuration values may be included in the frontend bundle; all secrets shall remain server-side.
 
 ---
 
