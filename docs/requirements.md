@@ -14,11 +14,11 @@ FR03 — The system shall support vehicle management (cars, motorcycles, or truc
 
 FR04 — The system shall allow the registration of delivery points, where the user provides a name, address or coordinates, and the cargo weight for each point. The system shall geocode the provided address and display the marker on the map in real time.
 
-FR05 - The system shall compute an optimized route based on a defined set of inputs parameters (including starting point, delivery points, and vehicle constraints) generating a solution that departs from the starting point, visits all points while respecting the vehicle capacity, and returns to the starting point, minimizing the total distance
+FR05 — The system shall compute an optimized route based on a defined set of input parameters (including starting point, delivery points, and vehicle constraints), generating a solution that departs from the starting point, visits all points while respecting the vehicle capacity, and returns to the starting point, minimizing the total distance.
 
 FR06 — The system shall display the optimized route as a polyline on the map, with markers numbered according to the visit sequence.
 
-FR07 - The system shall display, after optimization, route metrics including total distance, distance saved compared to the naive route, stop sequence, accumulated load per leg, and execution-related metrics such as processing time and optimization status.
+FR07 — The system shall display, after optimization, route metrics including total distance, distance saved compared to the naive route, stop sequence, accumulated load per leg, and execution-related metrics such as processing time and optimization status.
 
 FR08 — The system shall maintain a history of computed routes, recording the input characteristics (such as number of points), execution timestamp, and resulting key metrics.
 
