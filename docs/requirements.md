@@ -14,15 +14,17 @@ FR03 — The system shall support vehicle management (cars, motorcycles, or truc
 
 FR04 — The system shall allow the registration of delivery points, where the user provides a name, address or coordinates, and the cargo weight for each point. The system shall geocode the provided address and display the marker on the map in real time.
 
-FR05 — The system shall compute an optimized route that departs from the starting point, visits all points while respecting the vehicle capacity, and returns to the starting point, minimizing the total distance.
+FR05 — The system shall compute an optimized route based on a defined set of input parameters (including starting point, delivery points, and vehicle constraints), generating a solution that departs from the starting point, visits all points while respecting the vehicle capacity, and returns to the starting point, minimizing the total distance.
 
-FR06 — The system shall display the optimized route as a polyline on the map, with markers numbered in the visit sequence.
+FR06 — The system shall display the optimized route as a polyline on the map, with markers numbered according to the visit sequence.
 
-FR07 — The system shall display, after optimization, the route metrics: total distance, distance saved compared to the naive route, stop sequence, and accumulated load per leg.
+FR07 — The system shall display, after optimization, route metrics including total distance, distance saved compared to the naive route, stop sequence, accumulated load per leg, and execution-related metrics such as processing time and optimization status.
 
-FR08 — The system shall maintain a history of computed routes, recording date, number of points, and key metrics.
+FR08 — The system shall maintain a history of computed routes, recording the input characteristics (such as number of points), execution timestamp, and resulting key metrics.
 
 FR09 — The system shall allow the user to save a set of points and the result as a named scenario, which can be reloaded later.
+
+FR10 — The system shall record and expose optimization execution information, including processing time, execution status, and timestamps, for each computed route.
 
 ---
 
@@ -50,21 +52,22 @@ AR04 — The system shall use an intelligent caching layer to reduce redundant c
 
 ### 📊 Requirements Traceability Matrix
 
-| ID    | Description                                     | Criticality      |
-| ----- | ----------------------------------------------- | ---------------- |
-| FR01  | User lifecycle management (CRUD)                | 🔴 High          |
-| FR02  | User authentication                             | 🔴 High          |
-| FR03  | Vehicle management                              | 🔴 High          |
-| FR04  | Delivery point registration and geocoding       | 🔴 High          |
-| FR05  | Optimized route calculation                     | 🔴 High          |
-| FR06  | Route visualization on map                      | 🟡 Medium        |
-| FR07  | Route metrics display                           | 🟡 Medium        |
-| FR08  | Route history                                   | 🟡 Medium        |
-| FR09  | Scenario save and reload                        | 🟡 Medium        |
-| NFR01 | Optimization response under 5 seconds           | 🔴 High          |
-| NFR02 | Responsive interface (desktop and mobile)       | 🟢 Low           |
-| NFR03 | Password hashing, JWT protection, env security  | 🔴 High          |
-| AR01  | Independent microservices with Docker Compose   | 🔴 High          |
-| AR02  | Event-driven architecture for optimization flow | 🔴 High          |
-| AR03  | RabbitMQ as primary messaging mechanism         | 🔴 High          |
-| AR04  | Intelligent caching layer                       | 🟡 Medium        |
+| ID    | Description                                     | Criticality |
+| ----- | ----------------------------------------------- | ----------- |
+| FR01  | User lifecycle management (CRUD)                | 🔴 High     |
+| FR02  | User authentication                             | 🔴 High     |
+| FR03  | Vehicle management                              | 🔴 High     |
+| FR04  | Delivery point registration and geocoding       | 🔴 High     |
+| FR05  | Optimized route calculation                     | 🔴 High     |
+| FR06  | Route visualization on map                      | 🟡 Medium   |
+| FR07  | Route metrics display                           | 🟡 Medium   |
+| FR08  | Route history                                   | 🟡 Medium   |
+| FR09  | Scenario save and reload                        | 🟡 Medium   |
+| FR10  | Optimization execution info                     | 🔴 High     |
+| NFR01 | Optimization response under 5 seconds           | 🔴 High     |
+| NFR02 | Responsive interface (desktop and mobile)       | 🟢 Low      |
+| NFR03 | Password hashing, JWT protection, env security  | 🔴 High     |
+| AR01  | Independent microservices with Docker Compose   | 🔴 High     |
+| AR02  | Event-driven architecture for optimization flow | 🔴 High     |
+| AR03  | RabbitMQ as primary messaging mechanism         | 🔴 High     |
+| AR04  | Intelligent caching layer                       | 🟡 Medium   |
