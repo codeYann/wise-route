@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document specifies the functional requirements, non-functional requirements, and architectural constraints for the Wise Route system — a route optimization platform for delivery logistics. Each requirement is uniquely identified and classified by criticality in the traceability matrix at the end of this document.
+This document specifies the functional requirements and non-functional requirements for the Wise Route system — a route optimization platform for delivery logistics. Each requirement is uniquely identified and classified by criticality in the traceability matrix at the end of this document.
 
 ---
 
