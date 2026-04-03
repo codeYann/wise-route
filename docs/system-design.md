@@ -12,7 +12,7 @@ At a high level, the system is composed of an API layer responsible for handling
 
 The system requirements (functional and non-functional) are defined in the following document:
 
-[Requirements](https://github.com/codeYann/wise-route/blob/main/docs/requirements.md)
+[Requirements](./requirements.md)
 
 ## Architecture
 
