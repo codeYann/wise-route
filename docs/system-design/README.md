@@ -12,7 +12,7 @@ At a high level, the system is composed of an API layer responsible for handling
 
 The system requirements (functional and non-functional) are defined in the following document:
 
-[Requirements](./requirements.md)
+[Requirements](../requirements/README.md)
 
 ## Architecture
 
@@ -24,7 +24,7 @@ The API layer handles synchronous client interactions, while optimization worklo
 
 The following diagram illustrates the main components and their interactions.
 
-![Architecture Diagram](../assets/wise-route-architecture-diagram.png)
+![Architecture Diagram](../../assets/wise-route-architecture-diagram.png)
 
 ### Components
 
