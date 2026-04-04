@@ -1,6 +1,8 @@
 # 📋 Requirements
 
-This document specifies the functional requirements, non-functional requirements, and architectural constraints for the Wise Route system — a route optimization platform for delivery logistics. Each requirement is uniquely identified and classified by criticality in the traceability matrix at the end of this document.
+## Overview
+
+This document specifies the functional requirements and non-functional requirements for the Wise Route system — a route optimization platform for delivery logistics. Each requirement is uniquely identified and classified by criticality in the traceability matrix at the end of this document.
 
 ---
 
@@ -36,38 +38,31 @@ NFR02 — The system shall provide a functional desktop interface that is respon
 
 NFR03 — The system shall store passwords using bcrypt hashing, protect API routes with JWT, and never expose secrets or credentials (e.g., API keys, database credentials, private tokens) to the client. Only a whitelist of explicitly designated public configuration values may be included in the frontend bundle; all secrets shall remain server-side.
 
----
+NFR04 — The system shall process long-running operations such as route optimization asynchronously, with core services communicating through a decoupled messaging mechanism.
 
-## 🏗️ Architectural Constraints
+NFR05 — The system shall be horizontally scalable and support independent deployment of its core components.
 
-AR01 — The system shall be composed of independent microservices (API, optimization engine, and optionally geocoding), each with its own runtime environment, orchestrated via Docker Compose.
-
-AR02 — The system shall adopt an event-driven architecture for the optimization flow: the API shall publish an event upon receiving a request, and the optimization engine shall consume that event, process the optimization, and publish the response asynchronously.
-
-AR03 — The system shall use RabbitMQ as the primary messaging mechanism for inter-service communication, allowing HTTP communication only in specific and duly justified cases.
-
-AR04 — The system shall use an intelligent caching layer to reduce redundant calls and improve response time.
+NFR06 — The system shall minimize redundant external API calls through caching and optimize overall response time.
 
 ---
 
 ### 📊 Requirements Traceability Matrix
 
-| ID    | Description                                     | Criticality |
-| ----- | ----------------------------------------------- | ----------- |
-| FR01  | User lifecycle management (CRUD)                | 🔴 High     |
-| FR02  | User authentication                             | 🔴 High     |
-| FR03  | Vehicle management                              | 🔴 High     |
-| FR04  | Delivery point registration and geocoding       | 🔴 High     |
-| FR05  | Optimized route calculation                     | 🔴 High     |
-| FR06  | Route visualization on map                      | 🟡 Medium   |
-| FR07  | Route metrics display                           | 🟡 Medium   |
-| FR08  | Route history                                   | 🟡 Medium   |
-| FR09  | Scenario save and reload                        | 🟡 Medium   |
-| FR10  | Optimization execution info                     | 🔴 High     |
-| NFR01 | Optimization response under 5 seconds           | 🔴 High     |
-| NFR02 | Responsive interface (desktop and mobile)       | 🟢 Low      |
-| NFR03 | Password hashing, JWT protection, env security  | 🔴 High     |
-| AR01  | Independent microservices with Docker Compose   | 🔴 High     |
-| AR02  | Event-driven architecture for optimization flow | 🔴 High     |
-| AR03  | RabbitMQ as primary messaging mechanism         | 🔴 High     |
-| AR04  | Intelligent caching layer                       | 🟡 Medium   |
+| ID    | Description                                                  | Criticality |
+| ----- | ------------------------------------------------------------ | ----------- |
+| FR01  | User lifecycle management (CRUD)                             | 🔴 High     |
+| FR02  | User authentication                                          | 🔴 High     |
+| FR03  | Vehicle management                                           | 🔴 High     |
+| FR04  | Delivery point registration and geocoding                    | 🔴 High     |
+| FR05  | Optimized route calculation                                  | 🔴 High     |
+| FR06  | Route visualization on map                                   | 🟡 Medium   |
+| FR07  | Route metrics display                                        | 🟡 Medium   |
+| FR08  | Route history                                                | 🟡 Medium   |
+| FR09  | Scenario save and reload                                     | 🟡 Medium   |
+| FR10  | Optimization execution info                                  | 🔴 High     |
+| NFR01 | Optimization response under 5 seconds                        | 🔴 High     |
+| NFR02 | Responsive interface (desktop and mobile)                    | 🟢 Low      |
+| NFR03 | Password hashing, JWT protection, env security               | 🔴 High     |
+| NFR04 | Asynchronous processing with decoupled messaging             | 🔴 High     |
+| NFR05 | Horizontal scalability and independent component deployment  | 🔴 High     |
+| NFR06 | Caching to minimize redundant calls and optimize performance | 🔴 High     |
