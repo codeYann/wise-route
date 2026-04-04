@@ -9,7 +9,7 @@ This document describes the data model of WiseRoute — its entities, relationsh
 The schema is organized around three conceptual groups:
 
 **Identity** — who is using the system and what vehicle they operate.
-`user` → `vehicle`
+`users` → `vehicle`
 
 **Routing** — the input the user provides and the optional scenario template it may originate from.
 `scenario` → `route`
@@ -27,7 +27,7 @@ The schema is organized around three conceptual groups:
 
 ## Entities
 
-### `user`
+### `users`
 
 Represents a registered account. Passwords are never stored in plain text — only the bcrypt hash. The `public_id` is the only identifier exposed through the API; the internal `id` is never returned to the client.
 
@@ -67,7 +67,7 @@ PENDING → PROCESSING → COMPLETED
                      → FAILED
 ```
 
-When the job fails, `error_message` records the reason. No `optimization_result` row is created for failed jobs — its absence is the signal of failure.
+When the job fails, `error_message` records the reason. Failure is indicated by `optimization_job.status = FAILED`. Failed jobs do not get an `optimization_result` row, but the absence of a result row by itself does not imply failure because `PENDING` and `PROCESSING` jobs also have no result yet.
 
 ### `optimization_result`
 
@@ -114,9 +114,9 @@ Created only when an `optimization_job` reaches `COMPLETED` status. Stores the f
 
 | Table              | Relation    | Table                 |
 | ------------------ | ----------- | --------------------- |
-| `user`             | one-to-many | `vehicle`             |
-| `user`             | one-to-many | `route`               |
-| `user`             | one-to-many | `scenario`            |
+| `users`            | one-to-many | `vehicle`             |
+| `users`            | one-to-many | `route`               |
+| `users`            | one-to-many | `scenario`            |
 | `scenario`         | one-to-many | `route`               |
 | `vehicle`          | one-to-many | `route`               |
 | `route`            | one-to-many | `optimization_job`    |
