@@ -1,0 +1,29 @@
+{
+  "name": "@wise-route/api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "tsx src/main.ts",
+    "format": "biome format --write",
+    "lint": "biome check --write",
+    "build": "tsup"
+  },
+  "keywords": [
+    "API",
+    "Node.js",
+    "TypeScript",
+    "Fastify"
+  ],
+  "author": "Yan Rodrigues",
+  "license": "ISC",
+  "packageManager": "pnpm@10.33.0",
+  "devDependencies": {
+    "@types/node": "25.5.2",
+    "tsup": "8.5.1",
+    "tsx": "4.21.0",
+    "typescript": "catalog:",
+    "@biomejs/biome": "catalog:"
+  }
+}
