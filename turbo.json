@@ -9,7 +9,13 @@
       "persistent": true,
       "cache": false
     },
-    "lint": {},
-    "format": {}
+    "lint": {
+      "cache": false,
+      "outputs": []
+    },
+    "format": {
+      "cache": false,
+      "outputs": []
+    }
   }
 }
