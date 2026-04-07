@@ -1,0 +1,32 @@
+{
+	"name": "wise-route",
+	"version": "1.0.0",
+	"description": "Wise route monorepo",
+	"scripts": {
+		"dev": "turbo dev",
+		"build": "turbo build",
+		"lint": "turbo lint",
+		"format": "turbo format"
+	},
+	"keywords": [
+		"Monorepo",
+		"Turborepo",
+		"TypeScript",
+		"Node.js",
+		"React",
+		"Python",
+		"Optimization"
+	],
+	"author": "Yan Rodrigues",
+	"license": "MIT",
+	"packageManager": "pnpm@10.33.0",
+	"engines": {
+		"node": "24.12.x",
+		"pnpm": "10.33.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "catalog:",
+		"turbo": "2.9.4",
+		"typescript": "catalog:"
+	}
+}
