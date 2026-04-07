@@ -1,0 +1,31 @@
+{
+  "name": "@wise-route/api",
+  "version": "1.0.0",
+  "description": "Wise route API package",
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "tsx src/main.ts",
+    "build": "tsup src/main.ts --format cjs",
+    "format": "biome format --write",
+    "lint": "biome check --write"
+  },
+  "keywords": [
+    "API",
+    "Node.js",
+    "Fastify",
+    "TypeScript"
+  ],
+  "author": "Yan Rodrigues",
+  "license": "MIT",
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": "24.12.x",
+    "pnpm": "10.33.0"
+  },
+  "devDependencies": {
+    "@types/node": "25.5.2",
+    "tsup": "8.5.1",
+    "tsx": "4.21.0",
+    "typescript": "catalog:"
+  }
+}
