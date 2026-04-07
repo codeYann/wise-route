@@ -1,0 +1,38 @@
+{
+	"name": "wise-route",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"dev": "turbo dev",
+		"build": "turbo build",
+		"check-types": "turbo check-types",
+		"lint": "turbo lint",
+		"test": "turbo test",
+		"prepare": "husky"
+	},
+	"keywords": [
+		"Monorepo",
+		"TurboRepo",
+		"TypeScript"
+	],
+	"author": "Yan Rodrigues",
+	"license": "ISC",
+	"packageManager": "pnpm@10.33.0",
+	"engines": {
+		"node": ">=24.12.0",
+		"pnpm": ">=10.33.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.4.10",
+		"@commitlint/cli": "20.5.0",
+		"@commitlint/config-conventional": "20.5.0",
+		"husky": "9.1.7",
+		"lint-staged": "16.4.0",
+		"turbo": "2.9.3",
+		"typescript": "6.0.2"
+	},
+	"lint-staged": {
+		"**/*.{ts,tsx,js,cjs,jsx}": "biome check --write",
+		"**/*.{json,md}": "biome format --write"
+	}
+}
