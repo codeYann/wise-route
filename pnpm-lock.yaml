@@ -30,9 +30,15 @@ importers:
 
   apps/api:
     devDependencies:
+      '@biomejs/biome':
+        specifier: 'catalog:'
+        version: 2.4.10
       '@types/node':
         specifier: 25.5.2
         version: 25.5.2
+      '@wise-route/config':
+        specifier: workspace:*
+        version: link:../../config/tsconfig
       tsup:
         specifier: 8.5.1
         version: 8.5.1(tsx@4.21.0)(typescript@6.0.2)
@@ -42,6 +48,8 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 6.0.2
+
+  config/tsconfig: {}
 
 packages:
 

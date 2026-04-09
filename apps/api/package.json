@@ -2,12 +2,15 @@
   "name": "@wise-route/api",
   "version": "1.0.0",
   "description": "Wise route API package",
-  "main": "dist/main.js",
+  "main": "dist/app.js",
+  "type": "module",
   "scripts": {
+    "start": "node dist/app.js",
     "dev": "tsx src/main.ts",
-    "build": "tsup src/main.ts --format cjs",
+    "build": "tsup",
     "format": "biome format --write",
-    "lint": "biome check"
+    "lint": "biome check",
+    "lint:fix": "biome check --fix"
   },
   "keywords": [
     "API",
@@ -26,6 +29,8 @@
     "@types/node": "25.5.2",
     "tsup": "8.5.1",
     "tsx": "4.21.0",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "@biomejs/biome": "catalog:",
+    "@wise-route/config": "workspace:*"
   }
 }
