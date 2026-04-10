@@ -37,6 +37,6 @@
     "typescript": "catalog:"
   },
   "lint-staged": {
-    "*.{js,ts,jsx,tsx,json,md,css}": "pnpm exec biome check --fix"
+    "*.{js,ts,jsx,tsx,json,css}": "pnpm exec biome check --fix"
   }
 }
