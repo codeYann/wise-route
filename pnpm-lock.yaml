@@ -48,9 +48,9 @@ importers:
       '@types/node':
         specifier: 25.5.2
         version: 25.5.2
-      '@wise-route/config':
+      '@wise-route/tsconfig':
         specifier: workspace:*
-        version: link:../../config/tsconfig
+        version: link:../../packages/tsconfig
       tsup:
         specifier: 8.5.1
         version: 8.5.1(jiti@2.6.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3)
@@ -61,7 +61,7 @@ importers:
         specifier: 'catalog:'
         version: 6.0.2
 
-  config/tsconfig: {}
+  packages/tsconfig: {}
 
 packages:
 
