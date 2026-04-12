@@ -1,5 +1,5 @@
 {
-  "name": "@wise-route/config",
+  "name": "@wise-route/tsconfig",
   "version": "1.0.0",
   "description": "TypeScript configuration package for Wise Route monorepo",
   "private": true,

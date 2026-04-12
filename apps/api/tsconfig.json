@@ -1,5 +1,5 @@
 {
-  "extends": "@wise-route/config/node.json",
+  "extends": "@wise-route/tsconfig/node.json",
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist",
