@@ -1,13 +1,4 @@
-import { dirname, join } from 'node:path'
-import { fileURLToPath } from 'node:url'
-import { config } from 'dotenv'
 import type * as z from 'zod'
-import { findWorkspaceRoot } from './lib/find-workspace-root.ts'
-
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const workspaceRoot = findWorkspaceRoot(__dirname)
-
-config({ path: join(workspaceRoot, '.env') })
 
 export function createEnv<T extends z.ZodRawShape>(schema: z.ZodObject<T>) {
   const response = schema.safeParse(process.env)

@@ -12,7 +12,7 @@ export function findWorkspaceRoot(startDir: string) {
     }
     const parentDir = resolve(currentDir, '..')
     if (parentDir === currentDir) {
-      return resolve(startDir)
+      throw new Error('Workspace root not found')
     }
     currentDir = parentDir
   }
