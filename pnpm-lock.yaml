@@ -10,9 +10,18 @@ catalogs:
     '@biomejs/biome':
       specifier: 2.4.10
       version: 2.4.10
+    '@types/node':
+      specifier: 25.5.2
+      version: 25.5.2
+    tsup:
+      specifier: 8.5.1
+      version: 8.5.1
     typescript:
       specifier: 6.0.2
       version: 6.0.2
+    zod:
+      specifier: 4.3.6
+      version: 4.3.6
 
 importers:
 
@@ -41,18 +50,22 @@ importers:
         version: 6.0.2
 
   apps/api:
+    dependencies:
+      '@wise-route/env':
+        specifier: workspace:*
+        version: link:../../packages/env
     devDependencies:
       '@biomejs/biome':
         specifier: 'catalog:'
         version: 2.4.10
       '@types/node':
-        specifier: 25.5.2
+        specifier: 'catalog:'
         version: 25.5.2
       '@wise-route/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
       tsup:
-        specifier: 8.5.1
+        specifier: 'catalog:'
         version: 8.5.1(jiti@2.6.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3)
       tsx:
         specifier: 4.21.0
@@ -60,6 +73,25 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 6.0.2
+
+  packages/env:
+    dependencies:
+      dotenv:
+        specifier: 17.4.1
+        version: 17.4.1
+      zod:
+        specifier: 'catalog:'
+        version: 4.3.6
+    devDependencies:
+      '@types/node':
+        specifier: 'catalog:'
+        version: 25.5.2
+      '@wise-route/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      tsup:
+        specifier: 'catalog:'
+        version: 8.5.1(jiti@2.6.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3)
 
   packages/tsconfig: {}
 
@@ -700,6 +732,10 @@ packages:
     resolution: {integrity: sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==}
     engines: {node: '>=8'}
 
+  dotenv@17.4.1:
+    resolution: {integrity: sha512-k8DaKGP6r1G30Lx8V4+pCsLzKr8vLmV2paqEj1Y55GdAgJuIqpRp5FfajGF8KtwMxCz9qJc6wUIJnm053d/WCw==}
+    engines: {node: '>=12'}
+
   emoji-regex@10.6.0:
     resolution: {integrity: sha512-toUI84YS5YmxW219erniWD0CIVOo46xGKColeNQRgOzDorgBi1v4D71/OFzgD9GO2UGKIv1C3Sp8DAn0+j5w7A==}
 
@@ -1117,6 +1153,9 @@ packages:
   yargs@17.7.2:
     resolution: {integrity: sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==}
     engines: {node: '>=12'}
+
+  zod@4.3.6:
+    resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
 
 snapshots:
 
@@ -1597,6 +1636,8 @@ snapshots:
     dependencies:
       is-obj: 2.0.0
 
+  dotenv@17.4.1: {}
+
   emoji-regex@10.6.0: {}
 
   emoji-regex@8.0.0: {}
@@ -2024,3 +2065,5 @@ snapshots:
       string-width: 4.2.3
       y18n: 5.0.8
       yargs-parser: 21.1.1
+
+  zod@4.3.6: {}

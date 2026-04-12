@@ -5,5 +5,8 @@ packages:
 catalog:
   "typescript": "6.0.2"
   "@biomejs/biome": "2.4.10"
+  "@types/node": "25.5.2"
+  "zod": "4.3.6"
+  "tsup": "8.5.1"
 
 injectWorkspacePackages: true

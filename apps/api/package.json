@@ -25,9 +25,12 @@
     "node": "24.12.x",
     "pnpm": "10.33.0"
   },
+  "dependencies": {
+    "@wise-route/env": "workspace:*"
+  },
   "devDependencies": {
-    "@types/node": "25.5.2",
-    "tsup": "8.5.1",
+    "@types/node": "catalog:",
+    "tsup": "catalog:",
     "tsx": "4.21.0",
     "typescript": "catalog:",
     "@biomejs/biome": "catalog:",
