@@ -31,6 +31,6 @@
     "tsx": "4.21.0",
     "typescript": "catalog:",
     "@biomejs/biome": "catalog:",
-    "@wise-route/config": "workspace:*"
+    "@wise-route/tsconfig": "workspace:*"
   }
 }
