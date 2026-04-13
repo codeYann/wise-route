@@ -1,0 +1,20 @@
+{
+  "name": "@wise-route/solver",
+  "version": "1.0.0",
+  "description": "Wise route solver package",
+  "scripts": {
+    "dev": "uv run src/main.py",
+    "format": "uv run ruff format",
+    "lint": "uv run ruff check",
+    "lint:fix": "uv run ruff check --fix"
+  },
+  "keywords": [
+    "Solver",
+    "Integer Linear Programming",
+    "Optimization",
+    "Python"
+  ],
+  "author": "Yan Rodrigues",
+  "license": "MIT",
+  "packageManager": "pnpm@10.33.0"
+}
