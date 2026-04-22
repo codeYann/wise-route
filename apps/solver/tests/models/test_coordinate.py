@@ -28,6 +28,10 @@ class TestCoordinateValidName:
         with pytest.raises(ValidationError, match="Name cannot be empty"):
             Coordinate(**make_coordinate(name=""))
 
+    def test_whitespace_only_name_raises(self):
+        with pytest.raises(ValidationError, match="Name cannot be empty"):
+            Coordinate(**make_coordinate(name="   "))
+
 
 class TestCoordinateLatitude:
     def test_lat_at_lower_bound(self):
