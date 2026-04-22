@@ -1,7 +1,7 @@
 import pytest
 from pydantic import ValidationError
 
-from coordinate import Coordinate
+from models.coordinate import Coordinate
 
 
 def make_coordinate(**overrides) -> dict:

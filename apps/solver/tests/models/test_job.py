@@ -2,8 +2,8 @@ import pytest
 from pydantic import ValidationError
 from uuid import uuid4, UUID
 
-from job import Job
-from delivery_point import DeliveryPoint
+from models.job import Job
+from models.delivery_point import DeliveryPoint
 
 
 def make_depot(**overrides) -> dict:

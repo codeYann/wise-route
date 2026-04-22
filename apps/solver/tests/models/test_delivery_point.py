@@ -1,7 +1,7 @@
 import pytest
 from pydantic import ValidationError
 
-from delivery_point import DeliveryPoint
+from models.delivery_point import DeliveryPoint
 
 
 def make_delivery_point(**overrides) -> dict:

@@ -1,7 +1,7 @@
 import pytest
 from pydantic import ValidationError
 
-from vehicle import Vehicle
+from models.vehicle import Vehicle
 
 
 class TestVehicleMaxCapacity:
