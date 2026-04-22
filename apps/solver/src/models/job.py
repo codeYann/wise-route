@@ -1,7 +1,7 @@
 from pydantic import BaseModel, field_validator, model_validator
-from coordinate import Coordinate
-from delivery_point import DeliveryPoint
-from vehicle import Vehicle
+from .coordinate import Coordinate
+from .delivery_point import DeliveryPoint
+from .vehicle import Vehicle
 from uuid import UUID
 
 from typing import List

@@ -1,5 +1,5 @@
 from pydantic import field_validator
-from coordinate import Coordinate
+from .coordinate import Coordinate
 
 
 class DeliveryPoint(Coordinate):
