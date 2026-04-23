@@ -3,13 +3,11 @@ from uuid import UUID
 from typing import List
 
 from .optimization_result import OptimizationStatus
+from .coordinate import Coordinate
 
 
-class Waypoint(BaseModel):
+class Waypoint(Coordinate):
     sequence: int
-    name: str
-    lat: float
-    lng: float
     accumulated_load: float
 
 
