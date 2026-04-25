@@ -1,7 +1,18 @@
 from pydantic_settings import BaseSettings
 from pathlib import Path
+from functools import lru_cache
+from urllib.parse import quote_plus
 
-ROOT_DIR = Path(__file__).parent.parent.parent.parent
+
+def find_project_root(start_path: Path) -> Path:
+    current = start_path.resolve()
+    for parent in [current] + list(current.parents):
+        if (parent / "pnpm-workspace.yaml").exists():
+            return parent
+    raise RuntimeError("Could not find project root with pnpm-workspace.yaml")
+
+
+ROOT_DIR = find_project_root(Path(__file__))
 
 
 class Env(BaseSettings):
@@ -12,7 +23,9 @@ class Env(BaseSettings):
 
     @property
     def rabbitmq_url(self) -> str:
-        return f"amqp://{self.rabbitmq_user}:{self.rabbitmq_password}@{self.rabbitmq_host}:{self.rabbitmq_port}/"
+        user = quote_plus(self.rabbitmq_user)
+        password = quote_plus(self.rabbitmq_password)
+        return f"amqp://{user}:{password}@{self.rabbitmq_host}:{self.rabbitmq_port}/"
 
     model_config = {
         "env_file": ROOT_DIR / ".env",
@@ -21,4 +34,6 @@ class Env(BaseSettings):
     }
 
 
-env = Env()
+@lru_cache()
+def get_env() -> Env:
+    return Env()
