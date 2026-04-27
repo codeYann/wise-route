@@ -1,8 +1,6 @@
 from logger import setup_logger, get_logger
 from env import get_env
 
-logger = get_logger()
-
 
 def main():
     env = get_env()
@@ -12,7 +10,7 @@ def main():
         rotation=env.log_rotation,
         retention=env.log_retention,
     )
-
+    logger = get_logger()
     logger.info("Starting solver application")
 
 
