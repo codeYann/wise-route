@@ -2,9 +2,6 @@ from pydantic_settings import BaseSettings
 from pathlib import Path
 from functools import lru_cache
 from urllib.parse import quote_plus
-from logger import get_logger
-
-logger = get_logger()
 
 
 def find_project_root(start_path: Path) -> Path:
@@ -24,6 +21,12 @@ class Env(BaseSettings):
     rabbitmq_host: str = "localhost"
     rabbitmq_port: int = 5672
 
+    # Logger configuration
+    log_level: str = "INFO"
+    log_diagnose: bool = False
+    log_rotation: str = "25 MB"
+    log_retention: str = "7 days"
+
     @property
     def rabbitmq_url(self) -> str:
         user = quote_plus(self.rabbitmq_user)
@@ -39,5 +42,4 @@ class Env(BaseSettings):
 
 @lru_cache()
 def get_env() -> Env:
-    logger.info("Loading environment variables from .env file")
     return Env()
