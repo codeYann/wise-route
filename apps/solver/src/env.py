@@ -2,6 +2,9 @@ from pydantic_settings import BaseSettings
 from pathlib import Path
 from functools import lru_cache
 from urllib.parse import quote_plus
+from logger import get_logger
+
+logger = get_logger()
 
 
 def find_project_root(start_path: Path) -> Path:
@@ -36,4 +39,5 @@ class Env(BaseSettings):
 
 @lru_cache()
 def get_env() -> Env:
+    logger.info("Loading environment variables from .env file")
     return Env()
