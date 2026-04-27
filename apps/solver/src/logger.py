@@ -1,10 +1,12 @@
-from loguru import logger
 import sys
 from pathlib import Path
+from loguru import Logger, logger
+
+DEFAULT_LOG_DIR = Path(__file__).parent.parent / "logs"
 
 
 def setup_logger(
-    log_dir: str = "logs",
+    log_dir: Path | str | None = None,
     log_level: str = "INFO",
     diagnose: bool = False,
     rotation: str = "25 MB",
@@ -14,7 +16,7 @@ def setup_logger(
     Configure application logger.
 
     Args:
-        log_dir: Directory to store log files
+        log_dir: Directory to store log files (defaults to apps/solver/logs)
         log_level: Minimum log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
         diagnose: If True, display variable values in exceptions (disable in production)
         rotation: Condition to rotate log file
@@ -22,7 +24,7 @@ def setup_logger(
     """
     logger.remove()
 
-    log_path = Path(log_dir)
+    log_path = Path(log_dir) if log_dir else DEFAULT_LOG_DIR
     log_path.mkdir(exist_ok=True, parents=True)
 
     logger.add(
@@ -45,11 +47,10 @@ def setup_logger(
         backtrace=True,
         diagnose=diagnose,
         format="{time:YYYY-MM-DD HH:mm:ss.SSS} | {level: <8} | {name}:{function}:{line} - {message}",
-        watch=False,
     )
 
 
-def get_logger():
+def get_logger() -> Logger:
     """
     Return configured logger instance.
 
