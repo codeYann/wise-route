@@ -21,6 +21,12 @@ class Env(BaseSettings):
     rabbitmq_host: str = "localhost"
     rabbitmq_port: int = 5672
 
+    # Logger configuration
+    log_level: str = "INFO"
+    log_diagnose: bool = False
+    log_rotation: str = "25 MB"
+    log_retention: str = "7 days"
+
     @property
     def rabbitmq_url(self) -> str:
         user = quote_plus(self.rabbitmq_user)
